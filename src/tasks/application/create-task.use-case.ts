@@ -1,7 +1,7 @@
 import { Inject, Injectable } from "@nestjs/common";
 import type { ITaskRepository } from "../domain/task.repository.interface";
 import { ITaskRepositoryToken } from "../domain/task.repository.interface";
-import { Task } from "../domain/task.entify";
+import { Task } from "../domain/task.entity";
 
 
 
@@ -20,7 +20,7 @@ export class CreateTaskUseCase {
             'PENDING',
             new Date(),
         );
-        
+
         return this.taskRepository.create(task);
     }
 

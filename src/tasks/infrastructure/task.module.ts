@@ -17,6 +17,6 @@ import { TaskRepositoryImpl } from "./persistence/task.repository.impl";
     ],
     exports: [CreateTaskUseCase]
 })
-export class Tasksmodule{
+export class TasksModule{
 
 }
