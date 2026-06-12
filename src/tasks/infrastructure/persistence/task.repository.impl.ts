@@ -20,15 +20,23 @@ export class TaskRepositoryImpl implements ITaskRepository {
         return this.tasks.find( t => t.id == id) || null;
         
     }
-    
-    
-    update(task: Task): Promise<Task> {
-        throw new Error("Method not implemented.");
-    }
-    delete(id: string): Promise<boolean> {
-        throw new Error("Method not implemented.");
-    }
 
+    async update(updateTask: Task): Promise<Task> {
+        const index = this.tasks.findIndex( t => t.id == updateTask.id);
+        this.tasks[index] = updateTask;
+        return Promise.resolve(updateTask);
+    }
+    async delete(id: string): Promise<boolean> {
+        const index = this.tasks.findIndex( t => t.id == id);
+        if (index === -1)  return false;
+        this.tasks.splice(index, 1);
+        return true;
+        
+    }        
 }
 
 //! npm i --save class-validator class-transformer
+
+//! git add .
+//! git commit -m "add: Configuración de los casos de uso para tareas"
+//! git push 
