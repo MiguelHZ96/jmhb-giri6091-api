@@ -40,4 +40,9 @@ bootstrap();
 //! git add .
 //! git commit -m "fix: Estructura de tareas y listado disponible"
 
-//! npm i --save @nestjs/swagger
+//? npm i --save @nestjs/swagger
+
+//! Uso Prisma ORM
+//? npm i -D prisma
+//? npm i @prisma/client
+//? npx prisma init --datasource-provider postgresql
